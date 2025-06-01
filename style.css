@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  background: #0a0a14;
+  color: #00ffea;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  padding: 40px 20px;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* Background glitch animation */
+.background-glitch {
+  position: fixed;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  background:
+    linear-gradient(45deg, rgba(0, 255, 234, 0.15) 25%, transparent 25%) -50px 0,
+    linear-gradient(-45deg, rgba(0, 255, 234, 0.15) 25%, transparent 25%) -50px 0,
+    linear-gradient(45deg, transparent 75%, rgba(0, 255, 234, 0.15) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(0, 255, 234, 0.15) 75%);
+  background-size: 100px 100px;
+  animation: glitchMove 15s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes glitchMove {
+  0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+  100% { background-position: 100px 100px, 100px 100px, 100px 100px, 100px 100px; }
+}
+
+/* Glitch text effect */
+.glitch {
+  position: relative;
+  font-size: 3.5rem;
+  color: #00ffea;
+  letter-spacing: 3px;
+  user-select: none;
+  margin-bottom: 10px;
+  animation: glitchAnim 2s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c8;
+  animation: glitchAnimBefore 2s infinite;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9;
+  animation: glitchAnimAfter 2s infinite;
+}
+
+@keyframes glitchAnim {
+  0%, 100% { color: #00ffea; }
+  50% { color: #00ffc8; }
+}
+
+@keyframes glitchAnimBefore {
+  0%, 100% {
+    clip: rect(0, 900px, 0, 0);
+  }
+  20% {
+    clip: rect(10px, 900px, 60px, 0);
+  }
+  40% {
+    clip: rect(85px, 900px, 140px, 0);
+  }
+  60% {
+    clip: rect(10px, 900px, 60px, 0);
+  }
+  80% {
+    clip: rect(85px, 900px, 140px, 0);
+  }
+}
+
+@keyframes glitchAnimAfter {
+  0%, 100% {
+    clip: rect(0, 900px, 0, 0);
+  }
+  10% {
+    clip: rect(85px, 900px, 140px, 0);
+  }
+  30% {
+    clip: rect(10px, 900px, 60px, 0);
+  }
+  50% {
+    clip: rect(85px, 900px, 140px, 0);
+  }
+  70% {
+    clip: rect(10px, 900px, 60px, 0);
+  }
+}
+
+/* Header paragraph */
+header p {
+  font-size: 1.3rem;
+  color: #00ffea;
+  text-shadow: 0 0 10px #00ffea;
+  margin-bottom: 50px;
+}
+
+/* Login form styles */
+.login-section {
+  background: #011f27;
+  border: 2px solid #00ffea;
+  border-radius: 10px;
+  padding: 30px 20px;
+  width: 320px;
+  margin: 0 auto 50px;
+  box-shadow: 0 0 15px #00ffea;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.login-section h2 {
+  margin-bottom: 20px;
+  color: #00ffea;
+  text-shadow: 0 0 8px #00ffea;
+}
+
+.login-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-section input {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-family: 'Share Tech Mono', monospace;
+  background-color: #002931;
+  color: #00ffe0;
+  border: 1.5px solid #00ffea;
+  transition: border-color 0.3s ease;
+}
+
+.login-section input:focus {
+  border-color: #00fff0;
+}
+
+.login-section button {
+  background: linear-gradient(45deg, #00ffea, #0066ff);
+  border: none;
+  padding: 15px;
+  color: #001f27;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #00ffea;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-section button:hover {
+  background: linear-gradient(45deg, #0066ff, #00ffea);
+  box-shadow: 0 0 40px #00fff0;
+}
+
+.login-msg {
+  margin-top: 15px;
+  font-weight: bold;
+  height: 1.5em;
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.feature {
+  background: #011f27;
+  border: 2px solid #00ffea;
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 0 15px #00ffea;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #00fff0;
+}
+
+.feature h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #00ffe0;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #00ccaa;
+}
+
+/* Download Section */
+.download {
+  position: relative;
+  z-index: 2;
+}
+
+.download h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00ffea;
+  text-shadow: 0 0 8px #00ffea;
+}
+
+.download button {
+  background: linear-gradient(45deg, #00ffea, #0066ff);
+  border: none;
+  padding: 15px 40px;
+  color: #001f27;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #00ffea;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download button:hover {
+  background: linear-gradient(45deg, #0066ff, #00ffea);
+  box-shadow: 0 0 40px #00fff0;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  padding-top: 20px;
+  font-size: 0.9rem;
+  color: #004d40;
+  position: relative;
+  z-index: 2;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>R6 Siege Hacks</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="background-glitch"></div>
+
+  <header>
+    <h1 class="glitch" data-text="R6 Siege Hacks">R6 Siege Hacks</h1>
+    <p>Ultimate Cheats & Tools for Rainbow Six Siege</p>
+  </header>
+
+  <section class="login-section">
+    <h2>Member Login</h2>
+    <form id="login-form" action="#" method="POST">
+      <input type="text" id="username" name="username" placeholder="Username" required />
+      <input type="password" id="password" name="password" placeholder="Password" required />
+      <button type="submit">Log In</button>
+    </form>
+    <p class="login-msg"></p>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h2>🎯 Aim Bot</h2>
+      <p>Lock on targets with deadly precision.</p>
+    </div>
+    <div class="feature">
+      <h2>👁️ Wallhack</h2>
+      <p>See enemies through walls & obstacles.</p>
+    </div>
+    <div class="feature">
+      <h2>🚀 Speed Boost</h2>
+      <p>Move faster and outmaneuver opponents.</p>
+    </div>
+  </section>
+
+  <section class="download">
+    <h2>Download Now</h2>
+    <button>Get R6 Siege Hacks</button>
+  </section>
+
+  <footer>
+    <p>© 2025 R6 Siege Hacks. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Fake login handler - just for show
+    const form = document.getElementById('login-form');
+    const msg = document.querySelector('.login-msg');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault(); // prevent actual submission
+      msg.textContent = 'Access Denied: Invalid Credentials.';
+      msg.style.color = '#ff3366';
+      setTimeout(() => {
+        msg.textContent = '';
+      }, 3000);
+      form.reset();
+    });
+  </script>
+</body>
+</html>
